@@ -9,8 +9,8 @@ async function createUsersTable(pool) {
         password TEXT NOT NULL
       );
     `);
-  } catch (err) {
-    console.error("Error creating users table:", err);
+  } catch (error) {
+    console.error("Error creating users table:", error);
   }
 }
 
@@ -23,7 +23,7 @@ async function addUserToDB(name, password, pool) {
       "INSERT INTO users (name, password) VALUES ($1, $2) ON CONFLICT (name) DO NOTHING",
       [name, encryptedPassword]
     );
-  } catch (err) {
-    console.error("Error inserting user:", err);
+  } catch (error) {
+    console.error("Error inserting user:", error);
   }
 }

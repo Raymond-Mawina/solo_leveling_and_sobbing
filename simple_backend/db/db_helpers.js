@@ -28,8 +28,8 @@ async function getUserByName(name, pool) {
     }
 
     return result.rows[0];
-  } catch (err) {
-    console.error("Error fetching user by name:", err);
+  } catch (error) {
+    console.error("Error fetching user by name:", error);
   }
 }
 
