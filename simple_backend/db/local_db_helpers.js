@@ -1,3 +1,6 @@
+const { encryptPassword } = require("./db_helpers");
+const pool = require("./db_config");
+
 async function createUsersTable(pool) {
   try {
     await pool.query(`

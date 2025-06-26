@@ -33,4 +33,4 @@ async function getUserByName(name, pool) {
   }
 }
 
-module.exports = { getUserByName, checkIfPasswordIsValid };
+module.exports = { getUserByName, checkIfPasswordIsValid, encryptPassword };
