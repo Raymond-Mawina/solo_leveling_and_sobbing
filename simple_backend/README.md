@@ -9,4 +9,4 @@
       - [ ] What is OAuth?
       - [ ] What is basic authentication and how do we implement it?
       - [ ] What is token authentication and how do we implement it?
-      - [ ] What is cookie based authentication and how do we implement it?
+      - [ ] What is cookie-based authentication and how do we implement it?
