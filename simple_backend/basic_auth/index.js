@@ -1,7 +1,13 @@
+const pool = require("../db/db_config");
+const {
+  getUserByName,
+  checkIfPasswordIsValid,
+} = require("../db/local_db_helpers");
+
 // middleware that checks if authorization is included in the request header and
 // then authenticates the users credentials(username and password)
-export function basicAuth() {
-  return (req, res, next) => {
+function basicAuth() {
+  return async (req, res, next) => {
     const authorization = req.get("Authorization");
     if (authorization && authorization.startsWith("Basic ")) {
       // Extract and decode base64
@@ -11,13 +17,27 @@ export function basicAuth() {
       );
       const [username, password] = credentials.split(":");
       // Authenticate the users credentials
-      if (username === "user" && password === "pass") {
-        next();
-      } else {
+      const user = await getUserByName(username, pool);
+
+      if (user === null) {
         res.status(401).send("please provide correct credentials");
+      } else {
+        const isPasswordValid = await checkIfPasswordIsValid(
+          password,
+          user.password,
+          pool
+        );
+
+        if (isPasswordValid) {
+          next();
+        } else {
+          res.status(401).send("please provide correct credentials");
+        }
       }
     } else {
       res.status(401).send("please provide authentication");
     }
   };
 }
+
+module.exports = basicAuth;

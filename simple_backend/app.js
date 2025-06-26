@@ -1,6 +1,6 @@
 const express = require("express");
 const indexRouter = require("./routes/index");
-const { basicAuth } = require("./basic_auth/index");
+const basicAuth = require("./basic_auth/index");
 
 const app = express();
 const port = 3000;
