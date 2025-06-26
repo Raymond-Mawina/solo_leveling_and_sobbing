@@ -1,5 +1,5 @@
 const pool = require("../helpers/db_config");
-const { getUserByName } = require("../helpers/db_helpers");
+const getUserByName = require("../helpers/db_helpers");
 const { checkIfPasswordIsValid } = require("../helpers/encryption_helpers");
 
 // middleware that checks if authorization is included in the request header and

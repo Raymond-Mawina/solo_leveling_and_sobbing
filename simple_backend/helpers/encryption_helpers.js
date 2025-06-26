@@ -17,4 +17,4 @@ async function checkIfPasswordIsValid(plainTextPassword, hashedPassword) {
   }
 }
 
-module.exports = { getUserByName, checkIfPasswordIsValid, encryptPassword };
+module.exports = { checkIfPasswordIsValid, encryptPassword };
