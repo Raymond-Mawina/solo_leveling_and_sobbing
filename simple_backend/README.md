@@ -5,8 +5,8 @@
 
   1. Authentication
     - Study the various authentication concepts and methods that exists and implement them for the simple backend.
-      - [ ] What is JWT?
-      - [ ] What is OAuth?
       - [ ] What is basic authentication and how do we implement it?
       - [ ] What is token authentication and how do we implement it?
+      - [ ] What is JWT's?
       - [ ] What is cookie-based authentication and how do we implement it?
+      - [ ] What is OAuth?
