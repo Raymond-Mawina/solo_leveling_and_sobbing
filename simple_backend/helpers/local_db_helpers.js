@@ -1,4 +1,4 @@
-const { encryptPassword } = require("./db_helpers");
+const { encryptPassword } = require("./encryption_helpers");
 const pool = require("./db_config");
 
 async function createUsersTable(pool) {
