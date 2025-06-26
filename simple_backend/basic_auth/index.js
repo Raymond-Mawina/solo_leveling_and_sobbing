@@ -14,11 +14,9 @@ export function basicAuth() {
       if (username === "user" && password === "pass") {
         next();
       } else {
-        res.setHeader("WWW-Authenticate", 'Basic realm="Protected Area"');
         res.status(401).send("please provide correct credentials");
       }
     } else {
-      res.setHeader("WWW-Authenticate", 'Basic realm="Protected Area"');
       res.status(401).send("please provide authentication");
     }
   };

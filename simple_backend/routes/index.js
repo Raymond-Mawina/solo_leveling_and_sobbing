@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-/* GET the main page. */
+/* GET some secret. */
 router.get("/", function (req, res, next) {
-  res.send("welcome to simple backend");
+  res.status(200).json({ secret: "The world is a nice place" });
 });
 
 module.exports = router;

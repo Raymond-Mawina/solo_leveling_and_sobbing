@@ -1,0 +1,17 @@
+services:
+  simple_backend_db:
+    image: postgres:16.9
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=simple_backend_db
+    volumes:
+      - ./gitignore/simple_backend_db:/var/lib/postgresql/data
+    ports:
+      - 5443:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8078:8080
